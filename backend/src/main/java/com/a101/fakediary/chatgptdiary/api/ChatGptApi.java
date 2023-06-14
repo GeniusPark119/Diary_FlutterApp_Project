@@ -33,6 +33,16 @@ public class ChatGptApi {
     private final Integer N;
     private final Double TEMPERATURE;
 
+    /**
+     *
+     * @param MODEL_3_5 : GPT 3.5 model
+     * @param MODEL_4_0 : GPT 4 model
+     * @param API_URL : ChatGPT API 호출 URL
+     * @param MAX_TOKENS_3_5 : GPT 3.5 이용 시 최대 토큰 개수
+     * @param MAX_TOKENS_4_0 : GPT 4 이용 시 최대 토큰 개수
+     * @param N : N
+     * @param TEMPERATURE : TEMPERATURE
+     */
     public ChatGptApi(@Value("${fake-diary.chat-gpt.model3-5}") String MODEL_3_5,
                       @Value("${fake-diary.chat-gpt.model4-0}") String MODEL_4_0,
                       @Value("${fake-diary.chat-gpt.base-url}") String API_URL,
@@ -123,68 +133,6 @@ public class ChatGptApi {
 
         Instant end = Instant.now();
         log.info("GPT4 키워드로 일기 내용 받아오는데 걸리는 소요 시간 : " + Duration.between(start, end).toMillis() + " ms");
-
-        return messages;
-    }
-
-    public List<Message> chatGpt35LoadingMessage(String genre) throws Exception {
-        String userPrompt = ChatGptLoadingPrompts.getUserPrompt(genre);
-        List<Message> messages = new ArrayList<>();
-
-        messages.add(new Message("system", ChatGptLoadingPrompts.getSystemPrompt()));
-        messages.add(new Message("user", userPrompt));
-
-        ChatGptDiaryRequestDto requestDto = ChatGptDiaryRequestDto.builder()
-                .model(MODEL_3_5)
-                .n(N)
-                .maxTokens(MAX_TOKENS_3_5)
-                .temperature(TEMPERATURE)
-                .messages(messages)
-                .build();
-
-        ChatGptDiaryResponseDto responseDto = restTemplate35.postForObject(API_URL, requestDto, ChatGptDiaryResponseDto.class);
-
-        if (responseDto == null || responseDto.getChoices() == null || responseDto.getChoices().isEmpty()) {
-            log.info("no response!!!");
-            throw new Exception("GPT4가 응답이 없음");
-        }
-
-        String answer = responseDto.getChoices().get(0).getMessage().getContent().trim();
-        messages.add(new Message("assistant", answer));
-
-        log.info("answer = " + answer);
-        log.info("messages = " + messages);
-
-        return messages;
-    }
-
-    public List<Message> chatGpt35LoadingMessageOld(String genre) throws Exception {
-        String userPrompt = ChatGptLoadingPrompts.getUserPrompt(genre);
-        List<Message> messages = new ArrayList<>();
-
-        messages.add(new Message("system", ChatGptLoadingPrompts.getSystemPrompt()));
-        messages.add(new Message("user", userPrompt));
-
-        ChatGptDiaryRequestDto requestDto = ChatGptDiaryRequestDto.builder()
-                .model(MODEL_3_5)
-                .n(N)
-                .maxTokens(MAX_TOKENS_3_5)
-                .temperature(TEMPERATURE)
-                .messages(messages)
-                .build();
-
-        ChatGptDiaryResponseDto responseDto = restTemplate35.postForObject(API_URL, requestDto, ChatGptDiaryResponseDto.class);
-
-        if (responseDto == null || responseDto.getChoices() == null || responseDto.getChoices().isEmpty()) {
-            log.info("no response!!!");
-            throw new Exception("GPT4가 응답이 없음");
-        }
-
-        String answer = responseDto.getChoices().get(0).getMessage().getContent().trim();
-        messages.add(new Message("assistant", answer));
-
-        log.info("answer = " + answer);
-        log.info("messages = " + messages);
 
         return messages;
     }

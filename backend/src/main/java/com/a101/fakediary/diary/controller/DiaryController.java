@@ -65,6 +65,11 @@ public class DiaryController {
         }
     }
 
+    /**
+     *
+     * @param diaryId : 정보 가져올 일기 pk
+     * @return : DiaryResponseDto
+     */
     @ApiOperation(value = "일기 상세 조회")
     @GetMapping("/detail/{diaryId}")
     public ResponseEntity<?> detailDiary(@PathVariable Long diaryId) {
