@@ -10,5 +10,5 @@ import lombok.*;
 @ToString
 public class DeepArtEffectsUploadRequest {
     private String styleId;
-    private String imageBase64Encoded;
+    private String imageBase64Encoded;  //  Base64로 인코딩된 이미지
 }
