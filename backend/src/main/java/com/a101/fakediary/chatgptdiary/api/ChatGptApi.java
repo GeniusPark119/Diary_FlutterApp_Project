@@ -4,7 +4,6 @@ import com.a101.fakediary.chatgptdiary.dto.message.Message;
 import com.a101.fakediary.chatgptdiary.dto.request.ChatGptDiaryRequestDto;
 
 import com.a101.fakediary.chatgptdiary.dto.response.ChatGptDiaryResponseDto;
-import com.a101.fakediary.chatgptdiary.prompt.ChatGptLoadingPrompts;
 import com.a101.fakediary.chatgptdiary.prompt.ChatGptPrompts;
 import com.a101.fakediary.chatgptdiary.config.ChatGptApiConfig;
 import lombok.extern.slf4j.Slf4j;
