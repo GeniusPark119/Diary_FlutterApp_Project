@@ -1,6 +1,6 @@
 package com.a101.fakediary.randomexchangepool.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.diary.entity.Diary;
 import com.a101.fakediary.member.entity.Member;
 import lombok.*;
@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Builder
 @Entity
-public class RandomExchangePool extends BaseEntity {
+public class RandomExchangePool extends BaseTimeEntity {
     @SequenceGenerator(
             name="RANDOM_EXCHANGE_POOL_SEQ_GEN",
             sequenceName = "RANDOM_EXCHANGE_POOL_SEQ",

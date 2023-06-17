@@ -1,6 +1,6 @@
 package com.a101.fakediary.carddiarymapping.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.Column;
@@ -15,7 +15,7 @@ import javax.persistence.Table;
 @Builder
 @Entity
 @Table(name = "card_diary_mapping")
-public class CardDiaryMapping extends BaseEntity {
+public class CardDiaryMapping extends BaseTimeEntity {
     @EmbeddedId
     private CardDiaryMappingPK id;
     @Column(nullable = false)

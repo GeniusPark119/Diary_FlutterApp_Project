@@ -1,6 +1,6 @@
 package com.a101.fakediary.friendrequest.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.enums.ERequestStatus;
 import com.a101.fakediary.alarm.dto.AlarmResponseDto;
 import com.a101.fakediary.member.entity.Member;
@@ -34,7 +34,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
-public class FriendRequest extends BaseEntity {
+public class FriendRequest extends BaseTimeEntity {
     @SequenceGenerator(
             name = "FRIEND_REQUEST_SEQ_GEN",
             sequenceName = "FRIEND_REQUEST_SEQ",

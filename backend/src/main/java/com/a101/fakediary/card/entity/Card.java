@@ -1,6 +1,6 @@
 package com.a101.fakediary.card.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.member.entity.Member;
 import lombok.*;
 
@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Card extends BaseEntity {
+public class Card extends BaseTimeEntity {
     @SequenceGenerator(
             name = "CARD_SEQ_GEN",
             sequenceName = "CARD_SEQ",

@@ -1,6 +1,6 @@
 package com.a101.fakediary.music.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @Builder
 @ToString
 @Entity
-public class Music extends BaseEntity {
+public class Music extends BaseTimeEntity {
     @SequenceGenerator(
             name = "MEMBER_SEQ_GEN",
             sequenceName = "MEMBER_SEQ",

@@ -1,6 +1,6 @@
 package com.a101.fakediary.friendship.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.friendship.dto.FriendshipResponseDto;
 import com.a101.fakediary.member.entity.Member;
 import lombok.*;
@@ -34,7 +34,7 @@ import javax.persistence.*;
 @Builder
 @IdClass(FriendshipId.class)
 @Entity
-public class Friendship extends BaseEntity {
+public class Friendship extends BaseTimeEntity {
 
     @Id
     @Column(name = "member_id")

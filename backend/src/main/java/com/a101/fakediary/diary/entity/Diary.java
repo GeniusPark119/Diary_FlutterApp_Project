@@ -1,6 +1,6 @@
 package com.a101.fakediary.diary.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.member.entity.Member;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
@@ -14,7 +14,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Diary extends BaseEntity {
+public class Diary extends BaseTimeEntity {
     @SequenceGenerator(
             name="DIARY_SEQ_GEN",
             sequenceName = "DIARY_SEQ",

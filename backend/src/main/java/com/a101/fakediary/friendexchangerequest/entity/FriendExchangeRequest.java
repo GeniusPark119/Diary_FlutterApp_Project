@@ -1,6 +1,6 @@
 package com.a101.fakediary.friendexchangerequest.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.diary.entity.Diary;
 import com.a101.fakediary.enums.ERequestStatus;
 import com.a101.fakediary.member.entity.Member;
@@ -14,7 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
-public class FriendExchangeRequest extends BaseEntity {
+public class FriendExchangeRequest extends BaseTimeEntity {
     @SequenceGenerator(
             name="FRIENDEXCHANGEREQUEST_SEQ_GEN",
             sequenceName = "FRIENDEXCHANGEREQUEST_SEQ",

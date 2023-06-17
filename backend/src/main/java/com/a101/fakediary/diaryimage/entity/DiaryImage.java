@@ -1,6 +1,6 @@
 package com.a101.fakediary.diaryimage.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.diary.entity.Diary;
 import lombok.*;
 
@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
-public class DiaryImage extends BaseEntity {
+public class DiaryImage extends BaseTimeEntity {
     @SequenceGenerator(
             name = "DIARY_IMAGE_SEQ_GEN",
             sequenceName = "DIARY_IMAGE_SEQ",

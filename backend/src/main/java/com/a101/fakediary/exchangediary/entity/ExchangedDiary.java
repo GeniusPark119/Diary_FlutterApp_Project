@@ -1,8 +1,7 @@
 package com.a101.fakediary.exchangediary.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.diary.entity.Diary;
-import com.a101.fakediary.enums.EExchangeType;
 import com.a101.fakediary.enums.EExchangeType;
 import com.a101.fakediary.member.entity.Member;
 import lombok.*;
@@ -15,7 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
-public class ExchangedDiary extends BaseEntity {
+public class ExchangedDiary extends BaseTimeEntity {
     @SequenceGenerator(
             name="EXCHANGEDDIARY_SEQ_GEN",
             sequenceName = "EXCHANGEDDIARY_SEQ",

@@ -1,6 +1,6 @@
 package com.a101.fakediary.member.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import lombok.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -13,7 +13,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Member extends BaseEntity {
+public class Member extends BaseTimeEntity {
 
     @SequenceGenerator(
             name = "MEMBER_SEQ_GEN",

@@ -1,6 +1,6 @@
 package com.a101.fakediary.genre.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name = "genre")
-public class Genre extends BaseEntity {
+public class Genre extends BaseTimeEntity {
    @EmbeddedId
    private GenrePK id;
 }

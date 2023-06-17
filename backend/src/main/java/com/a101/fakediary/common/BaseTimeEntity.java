@@ -1,7 +1,6 @@
 package com.a101.fakediary.common;
 
 import lombok.Getter;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
@@ -10,7 +9,7 @@ import javax.persistence.*;
 @MappedSuperclass
 @Getter
 @EntityListeners(AuditingEntityListener.class)
-public abstract class BaseEntity {
+public abstract class BaseTimeEntity {
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
 

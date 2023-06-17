@@ -1,6 +1,6 @@
 package com.a101.fakediary.alarm.entity;
 
-import com.a101.fakediary.common.BaseEntity;
+import com.a101.fakediary.common.BaseTimeEntity;
 import com.a101.fakediary.enums.EAlarm;
 import com.a101.fakediary.member.entity.Member;
 import lombok.*;
@@ -14,7 +14,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Alarm extends BaseEntity {
+public class Alarm extends BaseTimeEntity {
     @SequenceGenerator(
             name = "ALARM_SEQ_GEN",
             sequenceName = "ALARM_SEQ",
