@@ -1,7 +1,6 @@
 package com.a101.fakediary.randomexchangepool.service;
 
 import com.a101.fakediary.alarm.dto.AlarmRequestDto;
-import com.a101.fakediary.alarm.dto.AlarmResponseDto;
 import com.a101.fakediary.alarm.service.AlarmService;
 import com.a101.fakediary.diary.dto.DiaryResponseDto;
 import com.a101.fakediary.diary.entity.Diary;
@@ -10,7 +9,6 @@ import com.a101.fakediary.diary.service.DiaryService;
 import com.a101.fakediary.enums.EExchangeType;
 import com.a101.fakediary.exchangediary.dto.request.ExchangedDiarySaveRequestDto;
 import com.a101.fakediary.exchangediary.dto.response.ExchangedDiaryResponseDto;
-import com.a101.fakediary.exchangediary.entity.ExchangedDiary;
 import com.a101.fakediary.exchangediary.service.ExchangedDiaryService;
 import com.a101.fakediary.member.entity.Member;
 import com.a101.fakediary.member.repository.MemberRepository;
@@ -21,14 +19,11 @@ import com.a101.fakediary.randomexchangepool.entity.RandomExchangePool;
 import com.a101.fakediary.randomexchangepool.repository.RandomExchangePoolRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -44,6 +39,9 @@ public class RandomExchangePoolService {
     private final DiaryService diaryService;
     private final ExchangedDiaryService exchangedDiaryService;
     private final AlarmService alarmService;
+
+    private final static String TITLE = "가짜 별에서 온 편지 도착";
+    private final static String BODY = "외계인은 어떤 일기를 보냈을까요?";
 
     @Transactional
     public RandomExchangePoolResponseDto registRandomExchange(RandomExchangePoolRegistDto randomExchangePoolRegistDto) throws Exception {
@@ -145,11 +143,8 @@ public class RandomExchangePoolService {
                     .friendExchangeType(EExchangeType.R)
                     .build();
 
-            String title = "가짜 별에서 온 편지 도착";
-            String body = "외계인은 어떤 일기를 보냈을까요?";
-
             ExchangedDiaryResponseDto A = exchangedDiaryService.saveExchangeDiary(exchangeDiarySaveRequestDto);
-            alarmService.saveAlarm(new AlarmRequestDto(A.getReceiverId(), A.getReceiveDiaryId(), title, body, "RANDOM"));
+            alarmService.saveAlarm(new AlarmRequestDto(A.getReceiverId(), A.getReceiveDiaryId(), TITLE, BODY, "RANDOM"));
 
             updateRandomExchangePool(repuDto);
         }
