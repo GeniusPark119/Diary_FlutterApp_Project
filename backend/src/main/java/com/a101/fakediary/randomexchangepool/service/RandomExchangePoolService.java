@@ -198,6 +198,11 @@ public class RandomExchangePoolService {
         return createRandomExchangePoolResponseDto(randomExchangePool);
     }
 
+    /**
+     * 
+     * @param randomExchangePool : 랜덤 요청 pool
+     * @return : 랜덤 요청 pool을 dto로 변환
+     */
     private RandomExchangePoolResponseDto createRandomExchangePoolResponseDto(RandomExchangePool randomExchangePool) {
         Diary diary = randomExchangePool.getDiary();
         Member owner = randomExchangePool.getOwner();
