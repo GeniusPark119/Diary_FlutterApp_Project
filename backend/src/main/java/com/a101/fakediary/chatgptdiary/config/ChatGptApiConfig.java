@@ -12,6 +12,12 @@ public class ChatGptApiConfig {
     private static String OPEN_AI_API_KEY_35;
     private static String OPEN_AI_API_KEY_40;
 
+    /**
+     * ChatGPT 키 등록
+     *
+     * @param OPEN_AI_API_KEY_35 : GPT 3.5 키
+     * @param OPEN_AI_API_KEY_40 : GPT 4 키
+     */
     public ChatGptApiConfig(@Value("${fake-diary.chat-gpt.api-key-3-5}") String OPEN_AI_API_KEY_35, @Value("${fake-diary.chat-gpt.api-key-4-0}") String OPEN_AI_API_KEY_40) {
         ChatGptApiConfig.OPEN_AI_API_KEY_35 = OPEN_AI_API_KEY_35;
         ChatGptApiConfig.OPEN_AI_API_KEY_40 = OPEN_AI_API_KEY_40;
