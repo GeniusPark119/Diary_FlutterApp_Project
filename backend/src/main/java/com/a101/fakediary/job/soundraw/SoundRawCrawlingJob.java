@@ -48,23 +48,25 @@ public class SoundRawCrawlingJob implements SchedulingConfigurer {
 //    @Scheduled(cron = "0 10 20 * * *")
 //    @Scheduled(cron = "0 0 4 * * *")
     public void runJob() throws Exception {
-
+        //  job 생성
         Job job = jobBuilderFactory.get("soundraw-crawling-job")
                 .incrementer(new RunIdIncrementer())
                 .flow(step())
                 .end()
                 .build();
-
+        //  job 실행
         jobLauncher.run(job, getJobParameters());
     }
 
     private Step step() {
+        //  step 실행
         return stepBuilderFactory.get("soundraw-crawling-step")
                 .tasklet(tasklet())
                 .build();
     }
 
     private Tasklet tasklet() {
+        //  task 실행
         return (stepContribution, chunkContext) -> {
             soundRawCrawler.downloadMusicsBatch();
             return RepeatStatus.FINISHED;
