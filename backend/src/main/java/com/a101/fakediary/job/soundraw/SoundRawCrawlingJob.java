@@ -45,8 +45,6 @@ public class SoundRawCrawlingJob implements SchedulingConfigurer {
         taskRegistrar.setTaskScheduler(taskScheduler);
     }
 
-//    @Scheduled(cron = "0 10 20 * * *")
-//    @Scheduled(cron = "0 0 4 * * *")
     public void runJob() throws Exception {
         //  job 생성
         Job job = jobBuilderFactory.get("soundraw-crawling-job")
