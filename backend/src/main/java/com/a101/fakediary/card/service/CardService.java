@@ -39,6 +39,16 @@ public class CardService {
     private final ImageFileHandler s3ImageFileHandler;
     private final DeepArtEffectsApi deepArtEffectsApi;
 
+    /**
+     * 
+     * @param origImageFile : 카드 촬영 후 App에서 편집되어 넘어온 사진
+     * @param cardImageFileUrl : DeepArtEffects가 적용된 카드의 이미지 URL
+     * @param styleIndex : 카드에 적용할 DeepArtEffects style의 index
+     * @param styleId : 카드에 적용할 DeepArtEffects style의 id
+     * @param saveCardDtoString : App에서 받은 요청 DTO 문자열
+     * @return : 카드 저장 정보 DTO
+     * @throws Exception : 예외 발생 가능
+     */
     @Transactional
     public CardSaveResponseDto saveCard(MultipartFile origImageFile, String cardImageFileUrl, int styleIndex, String styleId, String saveCardDtoString) throws Exception {
         CardSaveResponseDto ret = null;
