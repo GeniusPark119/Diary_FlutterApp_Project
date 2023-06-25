@@ -91,6 +91,12 @@ public class CardService {
         return ret;
     }
 
+    /**
+     * 
+     * @param origImageFile : App에서 받아온 이미지 파일
+     * @return : 카드 이미지로 변환하기 위해 적용된 style id와 index, 변환된 이미지의 URL 
+     * @throws Exception : 예외 발생 가능
+     */
     @Transactional
     public Map<String, String> getCardImageInfo(MultipartFile origImageFile) throws Exception {
         Map<String, String> ret = new HashMap<>();
