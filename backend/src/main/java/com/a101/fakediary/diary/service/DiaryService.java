@@ -593,36 +593,4 @@ public class DiaryService {
         cardIds.sort(Comparator.naturalOrder());//오름차순 정렬
         return cardIds;
     }
-
-    @Transactional(readOnly = true)
-    public DiaryResultDto getResultDtoOld(List<Long> cardList, List<String> genres) throws Exception {
-        DiaryItemsDto diaryItemsDto = getItemInformations(cardList, genres);
-        List<String> characters = diaryItemsDto.getCharacters();
-        List<String> places = diaryItemsDto.getPlaces();
-        List<String> keywords = diaryItemsDto.getKeywords();
-
-        String prompt = ChatGptPrompts.generateUserPrompt(characters, places, keywords, genres);
-
-//        TitleSubtitlesResultDto titleSubtitlesResultDto = chatGptApi.askGpt4TitleSubtitles(prompt);
-//        logger.info("titleSubtitlesResultDto = " + titleSubtitlesResultDto);
-        List<Message> messageList = chatGptApi.askGpt41(new ArrayList<Message>(), prompt);  //  GPT4 사용 시 askGpt4로 변경
-
-        StringBuilder diaryContent = new StringBuilder();
-        for (Message message : messageList) {
-            String role = message.getRole();
-            String content = message.getContent();
-
-            if (role.equals("assistant")) {
-                diaryContent.append(content);
-            }
-        }
-
-        logger.info("diaryContent = " + diaryContent);
-
-        ObjectMapper objectMapper = new ObjectMapper();
-        DiaryResultDto diaryResultDto = objectMapper.readValue(diaryContent.toString(), DiaryResultDto.class);
-        diaryResultDto.setPrompt(prompt);
-
-        return diaryResultDto;
-    }
 }
