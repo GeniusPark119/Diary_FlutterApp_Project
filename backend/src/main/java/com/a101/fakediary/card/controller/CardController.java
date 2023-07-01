@@ -101,18 +101,7 @@ public class CardController {
 
         return new ResponseEntity<>(cardResponseDto == null ? "해당 카드가 없음" : cardResponseDto, HttpStatus.OK);
     }
-
-    /**
-     * 카드 스타일 가져오기
-     *
-     * @return : DeeArtEffects에서 제공하는 이미지 변환 스타일들을 가져옴
-     */
-    @GetMapping("/styles")
-    public ResponseEntity<?> findCardStyles() {
-        log.info("findCardStyles!!!");
-        return new ResponseEntity<>(cardService.getDeepArtEffectsStyles().block(), HttpStatus.OK);
-    }
-
+    
     /**
      * 개발용
      * cardId라는 카드를 제거함
