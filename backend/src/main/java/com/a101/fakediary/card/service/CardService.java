@@ -118,11 +118,6 @@ public class CardService {
     }
 
     @Transactional(readOnly = true)
-    public Mono<String> getDeepArtEffectsStyles() {
-        return deepArtEffectsApi.getDeepArtEffectsStyles();
-    }
-
-    @Transactional(readOnly = true)
     public List<CardSaveResponseDto> listCards(Long memberId) throws Exception {
         List<CardSaveResponseDto> ret  = new ArrayList<>();
 

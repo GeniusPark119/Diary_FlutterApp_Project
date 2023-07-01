@@ -101,7 +101,7 @@ public class CardController {
 
         return new ResponseEntity<>(cardResponseDto == null ? "해당 카드가 없음" : cardResponseDto, HttpStatus.OK);
     }
-    
+
     /**
      * 개발용
      * cardId라는 카드를 제거함
