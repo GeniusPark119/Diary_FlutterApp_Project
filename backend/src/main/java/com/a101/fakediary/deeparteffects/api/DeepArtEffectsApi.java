@@ -43,23 +43,6 @@ public class DeepArtEffectsApi {
         headers.set("x-api-secret-key", this.SECRET_KEY);
     }
 
-    public Mono<String> getDeepArtEffectsStyles() {
-        //  2. api를 통해 style 목록을 얻어온다.
-        WebClient client = WebClient.builder()
-                .baseUrl(BASE_URL)
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .defaultHeaders(header -> header.addAll(headers))
-                .build();
-
-        //  GET request를 보내 style의 목록을 얻어온다.
-        Mono<String> response = client.get()
-                .uri("/styles")
-                .retrieve()
-                .bodyToMono(String.class);
-
-        return response;
-    }
-
     /**
      *
      * @param origImageFile : DeepArtEffects에 업로드할 원본 이미지 파일
