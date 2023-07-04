@@ -9,6 +9,7 @@ import com.a101.fakediary.member.entity.Member;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,7 @@ import java.util.List;
 @Api(value = "FriendshipController")
 @RequestMapping("/friendship")
 @RequiredArgsConstructor
+@Slf4j
 public class FriendshipController {
 
     private final FriendshipService friendshipService;
@@ -56,7 +58,8 @@ public class FriendshipController {
     public ResponseEntity<?> searchFriend(@PathVariable String nickname, @PathVariable Long memberId) {
         try {
             List<Member> list = friendshipService.searchFriend(nickname, memberId);
-            System.out.println(list.size());
+            log.info("list.size() = " + list.size());
+
             if (list.isEmpty())
                 return new ResponseEntity(HttpStatus.NO_CONTENT);
             return new ResponseEntity<List<Member>>(list, HttpStatus.OK);
