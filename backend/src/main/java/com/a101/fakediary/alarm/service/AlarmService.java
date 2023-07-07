@@ -97,8 +97,9 @@ public class AlarmService {
 
                 try {
                     firebaseMessaging.send(message);
-                    System.out.println("알림을 성공적으로 전송했습니다. targetUserId=" + member.getMemberId());
-                    System.out.println(member.getFirebaseUid() + " " + notification.toString());
+                    log.info("알림을 성공적으로 전송했습니다. targetUserId= " + member.getMemberId());
+                    log.info(member.getFirebaseUid() + " " + notification.toString());
+
                     return "알림을 성공적으로 전송했습니다. targetUserId=" + member.getMemberId();
                 } catch (FirebaseMessagingException e) {
                     e.printStackTrace();
