@@ -89,6 +89,7 @@ public class CardController {
      * @param cardId
      * @return
      */
+    @ApiOperation(value = "카드 가져오기", notes = "cardId에 해당하는 카드 가져오기")
     @GetMapping("/pick/{cardId}")
     public ResponseEntity<?> findCard(@PathVariable(name = "cardId")Long cardId) {
         CardSaveResponseDto cardResponseDto = null;
