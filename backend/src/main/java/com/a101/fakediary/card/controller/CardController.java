@@ -110,6 +110,7 @@ public class CardController {
      * @param cardId
      * @return
      */
+    @ApiOperation(value = "카드 제거", notes = "cardId에 해당하는 카드 제거")
     @DeleteMapping("/{cardId}")
     public ResponseEntity<?> deleteCardByCardId(@PathVariable("cardId") Long cardId) {
         long ret = -1;
