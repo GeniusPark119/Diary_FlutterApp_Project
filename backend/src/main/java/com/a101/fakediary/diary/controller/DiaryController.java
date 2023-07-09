@@ -140,6 +140,7 @@ public class DiaryController {
      * for developing : 모든 일기 랜덤 교환 사용 내역 초기화
      * @return
      */
+    @ApiOperation(value = "일기 랜덤 교환 내역 초기화")
     @PutMapping("/reset")
     public ResponseEntity<?> setAllDiariesRandomExchangedUnused() {
         try {
