@@ -35,6 +35,7 @@ public class DiaryController {
      * @param information : 생성할 일기 정보
      * @return
      */
+    @ApiOperation(value = "일기 생성")
     @PostMapping("/create")
     public ResponseEntity<?> saveDiaryWithDiaryInformation(@RequestBody DiaryInformation information) {
         log.info("saveDiaryWithDiaryInformation");
