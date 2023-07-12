@@ -38,10 +38,10 @@ public class DiaryController {
     @ApiOperation(value = "일기 생성")
     @PostMapping("/create")
     public ResponseEntity<?> saveDiaryWithDiaryInformation(@RequestBody DiaryInformation information) {
-        log.info("saveDiaryWithDiaryInformation");
-        log.info("memberId = " + information.getMemberId());
-        log.info("cardIdList = " + information.getCardIdList());
-        log.info("genreList = " + information.getGenreList());
+//        log.info("saveDiaryWithDiaryInformation");
+//        log.info("memberId = " + information.getMemberId());
+//        log.info("cardIdList = " + information.getCardIdList());
+//        log.info("genreList = " + information.getGenreList());
 
         try {
             Long memberId = information.getMemberId();
