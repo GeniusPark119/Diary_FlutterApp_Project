@@ -48,9 +48,9 @@ public class DiaryController {
             List<Long> cardIdList = information.getCardIdList();
             List<String> genreList = information.getGenreList();
 
-            log.info("memberId = " + memberId);
-            log.info("cardIdList = " + cardIdList);
-            log.info("genreList = " + genreList);
+//            log.info("memberId = " + memberId);
+//            log.info("cardIdList = " + cardIdList);
+//            log.info("genreList = " + genreList);
 
             DiaryResponseDto diaryResponseDto = diaryService.createDiary(memberId, cardIdList, genreList);
             String alarmTitle = "따끈따끈한 일기의 순간입니다";
