@@ -142,7 +142,7 @@ public class ImageFileHandler {
     }
 
     public static MultipartFile downloadImage(String imageUrl) throws IOException {
-        log.info("imageUrl = " + imageUrl);
+//        log.info("imageUrl = " + imageUrl);
 
         URL url = new URL(imageUrl);
         URLConnection connection = url.openConnection();
