@@ -78,7 +78,7 @@ public class ImageFileHandler {
         String originalFileName = multipartFile.getOriginalFilename();
         String url = null;
 
-        log.info("originalFileName = " + originalFileName);
+//        log.info("originalFileName = " + originalFileName);
 
         try {
             int idx = originalFileName.lastIndexOf(".");
