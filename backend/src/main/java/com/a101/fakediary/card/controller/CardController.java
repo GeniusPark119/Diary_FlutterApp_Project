@@ -73,7 +73,7 @@ public class CardController {
     @ApiOperation(value = "카드 조회 요청", notes = "memberId에 해당하는 회원이 보유한 카드 전체 리스트를 반환함")
     @GetMapping("/{memberId}")
     public ResponseEntity<?>  listCards(@PathVariable(name = "memberId")Long memberId) {
-        log.info("listCards!!!!");
+//        log.info("listCards!!!!");
         List<CardSaveResponseDto> ret = null;
         try {
             ret = cardService.listCards(memberId);
