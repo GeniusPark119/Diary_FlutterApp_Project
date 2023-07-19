@@ -59,10 +59,10 @@ public class CardService {
         CardSaveRequestDto saveCardDto = createCardSaveRequestDto(map);
         MultipartFile cardImageFile = ImageFileHandler.downloadImage(cardImageFileUrl);
 
-        log.info("cardImageFile = " + cardImageFile);
+//        log.info("cardImageFile = " + cardImageFile);
 
         List<Member> memberList = memberRepository.findAll();
-        log.info("memberList = " + memberList);
+//        log.info("memberList = " + memberList);
 
         Member member = memberRepository.findById(saveCardDto.getMemberId()).orElseThrow(() -> new Exception("member not found"));
         String origImageUrl = s3ImageFileHandler.uploadOnS3(origImageFile);
