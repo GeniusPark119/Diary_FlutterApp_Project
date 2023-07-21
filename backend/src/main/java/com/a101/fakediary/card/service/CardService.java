@@ -106,7 +106,7 @@ public class CardService {
 
         String submissionId = deepArtEffectsApi.uploadImageWithStyleId(origImageFile, styleId);
 
-        log.info("submissionId = " + submissionId);
+//        log.info("submissionId = " + submissionId);
 
         String cardImageFileUrl = deepArtEffectsApi.getCardImageUrl(submissionId);  //  카드 이미지 URL
 
