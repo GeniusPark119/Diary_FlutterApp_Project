@@ -119,7 +119,7 @@ public class ChatGptApi {
         } //while(retry) end
 
         if (responseDto == null || responseDto.getChoices() == null || responseDto.getChoices().isEmpty()) {
-            log.info("no response!!!");
+//            log.info("no response!!!");
             throw new Exception("GPT4가 응답이 없음");
         }
 
@@ -131,7 +131,7 @@ public class ChatGptApi {
         }
 
         Instant end = Instant.now();
-        log.info("GPT4 키워드로 일기 내용 받아오는데 걸리는 소요 시간 : " + Duration.between(start, end).toMillis() + " ms");
+//        log.info("GPT4 키워드로 일기 내용 받아오는데 걸리는 소요 시간 : " + Duration.between(start, end).toMillis() + " ms");
 
         return messages;
     }
