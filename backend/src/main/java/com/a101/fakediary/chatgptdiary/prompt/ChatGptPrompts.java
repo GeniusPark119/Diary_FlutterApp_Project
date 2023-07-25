@@ -94,7 +94,7 @@ public class ChatGptPrompts {
         contents.delete(contents.length() - 2, contents.length());  //  "주인공은 A, B, C이고, 장소는 D, E, F이고, 키워드는 X, Y, Z이고, 장르는 111, 222"
         contents.append(USER_END);  //  "주인공은 A, B, C이고, 장소는 D, E, F이고, 키워드는 X, Y, Z이고, 장르는 111, 222.이야."
 
-        log.info("생성된 프롬프트 = " + contents);
+//        log.info("생성된 프롬프트 = " + contents);
         return contents.toString();
     }
 
