@@ -71,7 +71,7 @@ public class DeepArtEffectsApi {
                 .bodyToMono(DeepArtEffectsUploadResponse.class);
 
         String submissionId = response.block().getSubmissionId();
-        log.info("submissionId = " + submissionId);
+//        log.info("submissionId = " + submissionId);
 
 
         return submissionId;
