@@ -109,9 +109,9 @@ public class DeepArtEffectsApi {
         }
 
         Instant end = Instant.now();
-        log.info("status = " + res.getStatus());
-        log.info("url = " + res.getUrl());
-        log.info("Elapsed time: " + Duration.between(start, end).toMillis() + " ms");
+//        log.info("status = " + res.getStatus());
+//        log.info("url = " + res.getUrl());
+//        log.info("Elapsed time: " + Duration.between(start, end).toMillis() + " ms");
 
         return res.getUrl();
     }
