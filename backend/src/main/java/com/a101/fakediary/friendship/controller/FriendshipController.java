@@ -58,7 +58,7 @@ public class FriendshipController {
     public ResponseEntity<?> searchFriend(@PathVariable String nickname, @PathVariable Long memberId) {
         try {
             List<Member> list = friendshipService.searchFriend(nickname, memberId);
-            log.info("list.size() = " + list.size());
+//            log.info("list.size() = " + list.size());
 
             if (list.isEmpty())
                 return new ResponseEntity(HttpStatus.NO_CONTENT);
