@@ -47,7 +47,7 @@ public class MusicService {
 
         musicRepository.save(music);
 
-        log.info("저장된 음악 = " + music);
+//        log.info("저장된 음악 = " + music);
 
         return new MusicResponseDto(music);
     }
