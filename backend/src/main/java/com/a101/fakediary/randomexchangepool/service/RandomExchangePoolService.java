@@ -81,7 +81,7 @@ public class RandomExchangePoolService {
     public void doRandomMatching() throws Exception {
         List<RandomExchangePoolResponseDto> randomExchangePoolResponseDtoList = getYesterdayRandomExchangePoolResponseList();
 
-        log.info("randomExchangePoolResponseDtoList = " + randomExchangePoolResponseDtoList);
+//        log.info("randomExchangePoolResponseDtoList = " + randomExchangePoolResponseDtoList);
 
         int size = randomExchangePoolResponseDtoList.size();    //  랜덤 요청 개수
         int remainder = size % 2;
@@ -92,20 +92,20 @@ public class RandomExchangePoolService {
                 RandomExchangePoolResponseDto reprDto1 = randomExchangePoolResponseDtoList.get(idx);
                 RandomExchangePoolResponseDto reprDto2 = randomExchangePoolResponseDtoList.get(idx + 1);
 
-                log.info("reprDto1 = " + reprDto1);
-                log.info("reprDto2 = " + reprDto2);
+//                log.info("reprDto1 = " + reprDto1);
+//                log.info("reprDto2 = " + reprDto2);
 
                 RandomExchangePoolUpdateDto repuDto1 = getRepuDto(reprDto1, reprDto2);
                 RandomExchangePoolUpdateDto repuDto2 = getRepuDto(reprDto2, reprDto1);
 
-                log.info("repuDto1 = " + repuDto1);
-                log.info("repuDto2 = " + repuDto2);
+//                log.info("repuDto1 = " + repuDto1);
+//                log.info("repuDto2 = " + repuDto2);
 
                 ExchangedDiarySaveRequestDto exchangeDiarySaveRequestDto1 = createEDSRDto(reprDto1, reprDto2);
                 ExchangedDiarySaveRequestDto exchangeDiarySaveRequestDto2 = createEDSRDto(reprDto2, reprDto1);
 
-                log.info("exchangeDiarySaveRequestDto1 = " + exchangeDiarySaveRequestDto1);
-                log.info("exchangeDiarySaveRequestDto2 = " + exchangeDiarySaveRequestDto1);
+//                log.info("exchangeDiarySaveRequestDto1 = " + exchangeDiarySaveRequestDto1);
+//                log.info("exchangeDiarySaveRequestDto2 = " + exchangeDiarySaveRequestDto1);
 
                 String title = "가짜 별에서 온 편지 도착";
                 String body = "외계인은 어떤 일기를 보냈을까요?";
