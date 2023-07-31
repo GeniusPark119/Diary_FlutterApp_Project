@@ -47,9 +47,9 @@ public class SoundRawCrawler {
         this.SOUND_RAW_URL = SOUND_RAW_URL;
         this.musicService = musicService;
 
-        log.info("S3_URL = " + this.S3_URL);
-        log.info("SOUND_RAW_URL = " + this.SOUND_RAW_URL);
-        log.info("FAST_API_URL = " + FAST_API_URL);
+//        log.info("S3_URL = " + this.S3_URL);
+//        log.info("SOUND_RAW_URL = " + this.SOUND_RAW_URL);
+//        log.info("FAST_API_URL = " + FAST_API_URL);
     }
 
     public String getMusicUrl(List<String> genreList, Long diaryPk) {
