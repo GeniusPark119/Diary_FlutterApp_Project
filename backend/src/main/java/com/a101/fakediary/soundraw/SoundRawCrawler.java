@@ -63,16 +63,16 @@ public class SoundRawCrawler {
             urlQuerySb.append(SoundRawMap.getMood(genre)).append(",");
         urlQuerySb.delete(urlQuerySb.length() - 1, urlQuerySb.length());   //  마지막 , 제거
 
-        log.info("requestUrl = " + requestUrl);
-        log.info("musicFileName = " + musicFileName);
-        log.info("urlQuerySb = " + urlQuerySb);
+//        log.info("requestUrl = " + requestUrl);
+//        log.info("musicFileName = " + musicFileName);
+//        log.info("urlQuerySb = " + urlQuerySb);
 
         FastApiRequestDto requestDto = FastApiRequestDto.builder()
                 .url(urlQuerySb.toString())
                 .filename(musicFileName)
                 .build();
 
-        log.info("requestDto = " + requestDto);
+//        log.info("requestDto = " + requestDto);
 
         Mono<String> response = webClient.post()
                 .uri(requestUrl.toString())
