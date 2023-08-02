@@ -97,7 +97,7 @@ public class SoundRawCrawler {
                 else if(urlMood.equals("Funny & Weird"))
                     urlMood = "Funny%20%26%20Weird";
 
-                log.info("다운로드할 음악 mood = " + mood);
+//                log.info("다운로드할 음악 mood = " + mood);
 
                 WebClient webClient = WebClient.create();
                 StringBuilder requestUrl = new StringBuilder(this.FAST_API_URL).append("/create-and-upload");
@@ -108,9 +108,9 @@ public class SoundRawCrawler {
                         .append("?length=60&tempo=normal,high,low&mood=")
                         .append(urlMood);
 
-                log.info("requestUrl = " + requestUrl);
-                log.info("musicFileName = " + musicFileName);
-                log.info("urlQuery = " + urlQuerySb);
+//                log.info("requestUrl = " + requestUrl);
+//                log.info("musicFileName = " + musicFileName);
+//                log.info("urlQuery = " + urlQuerySb);
 
                 FastApiRequestDto requestDto = FastApiRequestDto.builder()
                         .url(urlQuerySb.toString())
@@ -125,10 +125,10 @@ public class SoundRawCrawler {
                         .bodyToMono(String.class);
                 String responseBody = response.block();
 
-                log.info("responseBody = " + responseBody);
+//                log.info("responseBody = " + responseBody);
 
                 MusicResponseDto dto = musicService.saveMusic(musicFileName, this.S3_URL + musicFileName + ".wav", mood);
-                log.info("저장된 음악 = " + dto);
+//                log.info("저장된 음악 = " + dto);
             }
         }
     }
