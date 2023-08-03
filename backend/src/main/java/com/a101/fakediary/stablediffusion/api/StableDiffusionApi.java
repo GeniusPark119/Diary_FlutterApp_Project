@@ -194,7 +194,7 @@ public class StableDiffusionApi {
         ImageMap.put("diaryImagePrompt", diaryImagePrompt);
 
         Instant end = Instant.now();
-        log.info("삽화 생성하는데 소요된 시간 : " + Duration.between(start, end).toMillis() + " ms");
+//        log.info("삽화 생성하는데 소요된 시간 : " + Duration.between(start, end).toMillis() + " ms");
 
         return ImageMap;
     }
