@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(name = "diary", indexes =  {@Index(name = "idx__title", columnList = "title")})
 public class Diary extends BaseTimeEntity {
     @SequenceGenerator(
             name="DIARY_SEQ_GEN",
