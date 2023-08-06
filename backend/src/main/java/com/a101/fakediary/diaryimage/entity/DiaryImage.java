@@ -12,7 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "diary_image", indexes =  {@Index(name = "idx__diary", columnList = "diary")})
+@Table(name = "diary_image", indexes =  {@Index(name = "idx__diary", columnList = "diary_id")})
 public class DiaryImage extends BaseTimeEntity {
     @SequenceGenerator(
             name = "DIARY_IMAGE_SEQ_GEN",
