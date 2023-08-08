@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @Builder
 @Entity
+@Table(name = "card", indexes =  {@Index(name = "idx__style", columnList = "card_style_id")})
 public class Card extends BaseTimeEntity {
     @SequenceGenerator(
             name = "CARD_SEQ_GEN",
