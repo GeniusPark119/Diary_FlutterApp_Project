@@ -34,7 +34,7 @@ import javax.persistence.*;
 @Builder
 @IdClass(FriendshipId.class)
 @Entity
-@Table(name = "friendship", indexes =  {@Index(name = "idx__member_id", columnList = "member_id")})
+//@Table(name = "friendship", indexes =  {@Index(name = "idx__member_id", columnList = "member_id")})
 public class Friendship extends BaseTimeEntity {
 
     @Id
