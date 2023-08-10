@@ -1,9 +1,7 @@
 package com.a101.fakediary.alarm.controller;
 
 import com.a101.fakediary.alarm.dto.AlarmListDto;
-import com.a101.fakediary.alarm.entity.Alarm;
 import com.a101.fakediary.alarm.service.AlarmService;
-import com.a101.fakediary.diary.dto.DiaryResponseDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
