@@ -1,7 +1,5 @@
 package com.a101.fakediary.alarm.repository;
 
-import com.a101.fakediary.alarm.dto.AlarmListDto;
-import com.a101.fakediary.alarm.dto.AlarmResponseDto;
 import com.a101.fakediary.alarm.entity.Alarm;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
