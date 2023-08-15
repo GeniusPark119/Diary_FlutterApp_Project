@@ -3,7 +3,6 @@ package com.a101.fakediary.deeparteffects.api;
 import com.a101.fakediary.deeparteffects.request.DeepArtEffectsUploadRequest;
 import com.a101.fakediary.deeparteffects.response.DeepArtEffectsImageUrlResponse;
 import com.a101.fakediary.deeparteffects.response.DeepArtEffectsUploadResponse;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -13,12 +12,9 @@ import org.springframework.util.Base64Utils;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.time.Instant;
 
 @Component
