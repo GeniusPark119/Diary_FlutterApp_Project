@@ -1,26 +1,18 @@
 package com.a101.fakediary.soundraw;
 
-import com.a101.fakediary.mattermost.MatterMostSender;
 import com.a101.fakediary.music.dto.MusicResponseDto;
 import com.a101.fakediary.music.service.MusicService;
 import com.a101.fakediary.soundraw.dto.FastApiRequestDto;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.exec.CommandLine;
-import org.apache.commons.exec.DefaultExecutor;
-import org.apache.commons.exec.PumpStreamHandler;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.BodyInserters;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
-import java.io.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
