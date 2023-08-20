@@ -15,8 +15,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SwaggerConfig {
     @Bean
     public Docket SwaggerApi() {
-//        List<Parameter> global = new ArrayList<>();
-//        global.add(new ParameterBuilder().name("Authorization").description("access-token").parameterType("header").required(false).modelRef(new ModelRef("string")).build());
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(swaggerInfo()) //  API Docu 및 작성자 정보 매핑
                 .select()
