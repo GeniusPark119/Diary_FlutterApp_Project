@@ -2,7 +2,6 @@ package com.a101.fakediary.card.dto.response;
 
 import lombok.*;
 
-import javax.persistence.Entity;
 import java.time.LocalDateTime;
 
 @Getter
