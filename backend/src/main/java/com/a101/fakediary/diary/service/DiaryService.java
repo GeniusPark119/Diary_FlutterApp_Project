@@ -86,20 +86,6 @@ public class DiaryService {
     @Value("${cloud.aws.s3.bucket}")
     private String bucket;
 
-    private Diary toEntity(DiaryRequestDto dto) {
-        return Diary.builder()
-                .member(memberRepository.findByMemberId(dto.getMemberId()))
-                .keyword(dto.getKeyword()) // 받아온 카드리스트기반으로 키워드 추출
-                .characters(dto.getCharacters())
-                .places(dto.getPlaces())
-                .prompt(dto.getPrompt())
-                .title(dto.getTitle())
-                .detail(dto.getDetail())
-                .summary(dto.getSummary())
-                .subtitles(dto.getSubtitles())
-                .build();
-    }
-
     public List<DiaryResponseDto> changeResponse(List<Diary> diary) {
         List<DiaryResponseDto> list = new ArrayList<>();
         for (Diary value : diary) {
