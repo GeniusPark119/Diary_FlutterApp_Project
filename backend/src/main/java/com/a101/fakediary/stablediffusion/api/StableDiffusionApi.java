@@ -1,6 +1,5 @@
 package com.a101.fakediary.stablediffusion.api;
 
-import ch.qos.logback.core.net.server.Client;
 import com.a101.fakediary.papago.api.PapagoApi;
 import com.a101.fakediary.stablediffusion.dto.StableDiffusion200ResponseDto;
 import com.a101.fakediary.stablediffusion.dto.StableDiffusion422ResponseDto;
@@ -24,7 +23,6 @@ import reactor.core.publisher.Mono;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.Duration;
 import java.time.Instant;
 import java.util.*;
 
