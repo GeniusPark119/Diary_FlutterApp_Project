@@ -17,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @Slf4j
 public class ServerController {
-
-    private final Environment environment;
     private final ServerService serverService;
 
     @GetMapping
