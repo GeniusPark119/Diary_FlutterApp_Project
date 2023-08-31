@@ -138,11 +138,4 @@ DeepArtEffectsStyles {
     public static String getStyleId(int idx) {
         return styles[idx];
     }
-    public static String getRandomStyle() {
-      Random ran = new Random();
-      int indicesIdx = ran.nextInt(indices.length);
-      int styleIdx = indices[indicesIdx];
-
-      return styles[styleIdx];
-    }
 }
