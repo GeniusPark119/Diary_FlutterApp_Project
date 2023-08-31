@@ -25,7 +25,6 @@ import java.util.List;
 public class CardDiaryMappingService {
 
     private final CardDiaryMappingRepository cardDiaryMappingRepository;
-    private final CardService cardService;
     private final CardRepository cardRepository;
     private final DiaryRepository diaryRepository;
 
