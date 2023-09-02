@@ -2,7 +2,6 @@ package com.a101.fakediary.carddiarymapping.service;
 
 import com.a101.fakediary.card.entity.Card;
 import com.a101.fakediary.card.repository.CardRepository;
-import com.a101.fakediary.card.service.CardService;
 import com.a101.fakediary.carddiarymapping.dto.ListofCardMadeDiaryResponseDto;
 import com.a101.fakediary.carddiarymapping.entity.CardDiaryMapping;
 import com.a101.fakediary.carddiarymapping.entity.CardDiaryMappingPK;
