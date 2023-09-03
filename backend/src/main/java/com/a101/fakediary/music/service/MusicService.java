@@ -26,7 +26,6 @@ public class MusicService {
      */
     @Transactional(readOnly = true)
     public List<MusicResponseDto> getMusicsByMood(String mood) {
-//        return musicRepository.getMusicsByMoodAndUploadDate(mood, LocalDate.now());
         return musicRepository.getMusicsByMood(mood);
     }
 
@@ -46,9 +45,7 @@ public class MusicService {
                 .build();
 
         musicRepository.save(music);
-
-//        log.info("저장된 음악 = " + music);
-
+        
         return new MusicResponseDto(music);
     }
 }
