@@ -45,7 +45,7 @@ public class MusicService {
                 .build();
 
         musicRepository.save(music);
-        
+
         return new MusicResponseDto(music);
     }
 }
