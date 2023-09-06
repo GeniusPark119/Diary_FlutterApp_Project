@@ -2,7 +2,7 @@ package com.a101.fakediary.carddiarymapping.service;
 
 import com.a101.fakediary.card.entity.Card;
 import com.a101.fakediary.card.repository.CardRepository;
-import com.a101.fakediary.carddiarymapping.dto.ListofCardMadeDiaryResponseDto;
+import com.a101.fakediary.carddiarymapping.dto.ListOfCardMadeDiaryResponseDto;
 import com.a101.fakediary.carddiarymapping.entity.CardDiaryMapping;
 import com.a101.fakediary.carddiarymapping.entity.CardDiaryMappingPK;
 import com.a101.fakediary.carddiarymapping.repository.CardDiaryMappingRepository;
@@ -46,11 +46,11 @@ public class CardDiaryMappingService {
         }
     }
 
-    public List<ListofCardMadeDiaryResponseDto> findCardsByDiaryId(Long diaryId) {
+    public List<ListOfCardMadeDiaryResponseDto> findCardsByDiaryId(Long diaryId) {
         List<CardDiaryMapping> mappings = cardDiaryMappingRepository.findByIdDiaryDiaryId(diaryId);
-        List<ListofCardMadeDiaryResponseDto> returnDto = new ArrayList<>();
+        List<ListOfCardMadeDiaryResponseDto> returnDto = new ArrayList<>();
         for (CardDiaryMapping mapping : mappings) {
-            returnDto.add(new ListofCardMadeDiaryResponseDto(mapping.getId().getCard()));
+            returnDto.add(new ListOfCardMadeDiaryResponseDto(mapping.getId().getCard()));
         }
         return returnDto;
     }

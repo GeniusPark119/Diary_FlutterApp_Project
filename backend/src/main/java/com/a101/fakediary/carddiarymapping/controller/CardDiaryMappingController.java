@@ -1,13 +1,9 @@
 package com.a101.fakediary.carddiarymapping.controller;
 
-import com.a101.fakediary.carddiarymapping.dto.ListofCardMadeDiaryResponseDto;
-import com.a101.fakediary.carddiarymapping.entity.CardDiaryMappingPK;
+import com.a101.fakediary.carddiarymapping.dto.ListOfCardMadeDiaryResponseDto;
 import com.a101.fakediary.carddiarymapping.repository.CardDiaryMappingRepository;
 import com.a101.fakediary.carddiarymapping.service.CardDiaryMappingService;
-import com.a101.fakediary.diary.dto.DiaryResponseDto;
-import com.a101.fakediary.diary.entity.Diary;
 import com.a101.fakediary.diary.repository.DiaryRepository;
-import com.a101.fakediary.diary.service.DiaryService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +31,7 @@ public class CardDiaryMappingController {
         }
 
         try {
-            List<ListofCardMadeDiaryResponseDto> returnDto = cardDiaryMappingService.findCardsByDiaryId(diaryId);
+            List<ListOfCardMadeDiaryResponseDto> returnDto = cardDiaryMappingService.findCardsByDiaryId(diaryId);
             return ResponseEntity.ok(returnDto);
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());

@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class ListofCardMadeDiaryResponseDto {
+public class ListOfCardMadeDiaryResponseDto {
     private Long cardId;
     private String baseName;
     private String basePlace;
@@ -24,7 +24,7 @@ public class ListofCardMadeDiaryResponseDto {
     private Integer cardStyleIndex;
     private String cardStyleId;
 
-    public ListofCardMadeDiaryResponseDto(Card card) {
+    public ListOfCardMadeDiaryResponseDto(Card card) {
         this.cardId = card.getCardId();
         this.baseName = card.getBaseName();
         this.basePlace = card.getBasePlace();
