@@ -29,16 +29,4 @@ public class PapagoApi {
         }
         return null;
     }
-
-    public String translateEngToKor(String text) { //메소드 불러서 바꾸고 싶은 내용 text에 넣으면 한 -> 영 바꿔서 return
-        String translatedText = papagoTranslator.translateEngToKor(text).block();
-        Pattern pattern = Pattern.compile("\"translatedText\":\"([^\"]*)\"");
-        Matcher matcher = pattern.matcher(translatedText);
-        if (matcher.find()) {
-            String trans = matcher.group(1);
-            logger.info("번역완료 : {} -> {}", text, trans);
-            return trans;
-        }
-        return null;
-    }
 }
