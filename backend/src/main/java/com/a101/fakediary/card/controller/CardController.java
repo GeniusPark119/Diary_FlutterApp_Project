@@ -40,7 +40,6 @@ public class CardController {
             @RequestPart(value = "origImageFile", required = true) MultipartFile origImageFile,
             @RequestParam(value = "cardSaveRequestDtoString")String cardSaveRequestDtoString
     ) {
-//        log.info("saveCard!!!!");
         ResponseEntity<?> ret = null;
 
         try {
