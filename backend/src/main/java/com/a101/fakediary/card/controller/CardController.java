@@ -98,27 +98,7 @@ public class CardController {
 
         return new ResponseEntity<>(cardResponseDto == null ? "해당 카드가 없음" : cardResponseDto, HttpStatus.OK);
     }
-
-    /**
-     * 개발용
-     * cardId라는 카드를 제거함
-     *
-     * @param cardId
-     * @return
-     */
-    @ApiOperation(value = "카드 제거", notes = "cardId에 해당하는 카드 제거")
-    @DeleteMapping("/{cardId}")
-    public ResponseEntity<?> deleteCardByCardId(@PathVariable("cardId") Long cardId) {
-        long ret = -1;
-
-        try {
-            ret = cardService.deleteCardByCardId(cardId);
-        } catch(Exception e) {
-            e.printStackTrace();;
-        }
-
-        return new ResponseEntity<>("삭제된 카드 번호 = " + ret, HttpStatus.OK);
-    }
+    
     @ApiOperation(value = "특정 카드로 만들어진 일기 리스트 조회")
     @GetMapping("/diary/{cardId}")
     public ResponseEntity<?> findDiaryListByCardId(@PathVariable("cardId") Long cardId) {
