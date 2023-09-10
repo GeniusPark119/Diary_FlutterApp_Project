@@ -49,8 +49,6 @@ public class CardController {
             String styleId = map.get("styleId");                        //  적용된 DeepArtEffects style id
             String cardImageFileUrl = map.get("cardImageFileUrl");      //  DeepArtEffects style 적용된 카드 이미지 URL
 
-//            log.info("cardImageFileUrl = " + cardImageFileUrl);
-
             CardSaveResponseDto cardSaveResponseDto = cardService.saveCard(origImageFile, cardImageFileUrl, styleIndex, styleId, cardSaveRequestDtoString);
             ret = new ResponseEntity<>(cardSaveResponseDto, HttpStatus.OK);
         } catch(ParseException e) {
@@ -72,7 +70,6 @@ public class CardController {
     @ApiOperation(value = "카드 조회 요청", notes = "memberId에 해당하는 회원이 보유한 카드 전체 리스트를 반환함")
     @GetMapping("/{memberId}")
     public ResponseEntity<?>  listCards(@PathVariable(name = "memberId")Long memberId) {
-//        log.info("listCards!!!!");
         List<CardSaveResponseDto> ret = null;
         try {
             ret = cardService.listCards(memberId);
