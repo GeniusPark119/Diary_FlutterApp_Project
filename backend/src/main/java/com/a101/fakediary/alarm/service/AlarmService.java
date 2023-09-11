@@ -86,7 +86,6 @@ public class AlarmService {
                 Notification notification = Notification.builder()
                         .setTitle(alarm.getTitle())
                         .setBody(alarm.getBody())
-                        // .setImage(requestDto.getImage())
                         .build();
 
                 Message message = Message.builder()
