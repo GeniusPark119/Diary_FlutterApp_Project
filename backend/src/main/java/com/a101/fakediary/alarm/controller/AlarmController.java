@@ -27,7 +27,7 @@ public class AlarmController {
     public ResponseEntity<?> listAlarm(@PathVariable Long memberId) {
         try {
             List<AlarmListDto> list = alarmService.listAlarm(memberId);
-            return new ResponseEntity<List<AlarmListDto>>(list, HttpStatus.OK);
+            return new ResponseEntity<List<>>(list, HttpStatus.OK);
         } catch (NullPointerException e){
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
