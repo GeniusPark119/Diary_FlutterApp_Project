@@ -116,7 +116,6 @@ public class ChatGptApi {
         } //while(retry) end
 
         if (responseDto == null || responseDto.getChoices() == null || responseDto.getChoices().isEmpty()) {
-//            log.info("no response!!!");
             throw new Exception("GPT4가 응답이 없음");
         }
 
