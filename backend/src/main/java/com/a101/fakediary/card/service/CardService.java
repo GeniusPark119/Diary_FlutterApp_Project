@@ -98,9 +98,6 @@ public class CardService {
         String styleId = DeepArtEffectsStyles.getStyleId(randomStyleIdx);   //  적용된 styleId
 
         String submissionId = deepArtEffectsApi.uploadImageWithStyleId(origImageFile, styleId);
-
-//        log.info("submissionId = " + submissionId);
-
         String cardImageFileUrl = deepArtEffectsApi.getCardImageUrl(submissionId);  //  카드 이미지 URL
 
         ret.put("styleIndex", String.valueOf(randomStyleIdx));
