@@ -149,13 +149,6 @@ public class CardService {
         Object latitudeObj = map.get("latitude");
         Object longitudeObj = map.get("longitude"); //  nullable한 속성들
 
-//        log.info("memberId = " + map.get("memberId"));
-//        log.info("baseName = " + baseNameObj);
-//        log.info("basePlace = " + basePlaceObj);
-//        log.info("keyword = " + map.get("keyword"));
-//        log.info("latitude = " + latitudeObj);
-//        log.info("longitude = " + longitudeObj);
-
         Long memberId = Long.parseLong(String.valueOf(map.get("memberId")));
         String baseName = baseNameObj != null ? String.valueOf(baseNameObj) : null;
         String basePlace = basePlaceObj != null ? String.valueOf(basePlaceObj) : null;
