@@ -129,15 +129,6 @@ public class CardService {
         return ret;
     }
 
-    @Transactional
-    public Long deleteCardByCardId(Long cardId) throws Exception {
-        Card card = cardRepository.findById(cardId).orElseThrow(() -> new Exception("Card not found"));
-        Long ret = card.getCardId();
-
-        cardRepository.delete(card);
-        return ret;
-    }
-
     //특정 카드로 만들어진 일기Id 리스트 반환
     @Transactional(readOnly = true)
     public List<Long> getDiaryIdsByCardId(Long cardId) {
