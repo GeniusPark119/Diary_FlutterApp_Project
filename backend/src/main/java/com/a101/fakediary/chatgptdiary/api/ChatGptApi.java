@@ -63,7 +63,7 @@ public class ChatGptApi {
      * @return : gpt4가 만들어준 대답 프롬프트
      */
     public List<Message> askGpt41(List<Message> messages, String prompt) throws Exception {
-        Instant start = Instant.now();
+//        Instant start = Instant.now();
 
         if (messages.isEmpty()) {
             messages.add(new Message("system", ChatGptPrompts.generateSystemPrompt()));
